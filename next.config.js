@@ -1,48 +1,21 @@
-const withTypescript = require('@zeit/next-typescript')
-const withCSS = require('@zeit/next-css')
-const withImages = require('next-images')
+const withPlugins = require('next-compose-plugins');
+const Typescript = require('@zeit/next-typescript')
+const Css = require('@zeit/next-css')
+const Images = require('next-images')
+const Fonts = require('next-fonts')
 
-module.exports = withTypescript(withCSS(withImages()));
+const nextConfig = {
+    distDir: 'build',
+    webpack: (config, options) => {
+   
+    console.log(config.module.rules[0]);
+      return config;
+    },
+  };
 
-
-
-// module.exports = {
-//   module: {
-//     rules: [
-//       withTypescript(),
-//       withCSS({
-//           cssModules: true
-//         }),
-        
-//     ]
-//   },
-// }
-// const withCSS = require('@zeit/next-css')
-// module.exports = withCSS({
-//   cssModules: true
-// })
-// const withCSS = require('@zeit/next-css')
-// module.exports = withCSS({
-//   cssModules: true,
-//   withTypescript()
-// })
-// module.exports = withTypescript(withCSS({
-//   cssModules: true
-// }))
-
-// module.exports = withCSS(withTypescript(
-//   cssModules: true,
-//   webpack: (config) => {
-//      return config
-//   }))
-
-// module.exports = {
-//   webpack: config => {
-//     // Fixes npm packages that depend on `fs` module
-//     config.node = {
-//       fs: 'empty'
-//     }
-
-//     return config
-//   }
-// }
+module.exports = withPlugins([
+    Typescript,
+    Css,
+    Images,
+    Fonts
+], nextConfig)
