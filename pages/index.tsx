@@ -1,13 +1,26 @@
 import React from 'react'
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+// import blueprintjs from '@blueprintjs/core/lib/css/blueprint.css';
 import Link from 'next/link'
 import { Head } from '../components/head';
 import { Nav } from '../components/nav';
+import { Button } from '@blueprintjs/core';
 
 const Home = () => (
   <div>
     <Head title="Home" />
     <Nav />
+    <h1 className="f4 lh-copy">Title</h1>
 
+<Button icon="refresh" />
+<ul className="bp3-breadcrumbs">
+  <li><a className="bp3-breadcrumbs-collapsed" href="#"></a></li>
+  <li><a className="bp3-breadcrumb bp3-disabled">Folder one</a></li>
+  <li><a className="bp3-breadcrumb" href="#">Folder two</a></li>
+  <li><a className="bp3-breadcrumb" href="#">Folder three</a></li>
+  <li><span className="bp3-breadcrumb bp3-breadcrumb-current">File</span></li>
+</ul>
     <div className="hero">
       <h1 className="title">Welcome to Next!</h1>
       <p className="description">
@@ -39,7 +52,7 @@ const Home = () => (
       </div>
     </div>
 
-    <style jsx>{`
+    <style jsx={true}>{`
       .hero {
         width: 100%;
         color: #333;

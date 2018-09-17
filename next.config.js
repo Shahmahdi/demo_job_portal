@@ -1,5 +1,40 @@
 const withTypescript = require('@zeit/next-typescript')
-module.exports = withTypescript()
+const withCSS = require('@zeit/next-css')
+const withImages = require('next-images')
+
+module.exports = withTypescript(withCSS(withImages()));
+
+
+
+// module.exports = {
+//   module: {
+//     rules: [
+//       withTypescript(),
+//       withCSS({
+//           cssModules: true
+//         }),
+        
+//     ]
+//   },
+// }
+// const withCSS = require('@zeit/next-css')
+// module.exports = withCSS({
+//   cssModules: true
+// })
+// const withCSS = require('@zeit/next-css')
+// module.exports = withCSS({
+//   cssModules: true,
+//   withTypescript()
+// })
+// module.exports = withTypescript(withCSS({
+//   cssModules: true
+// }))
+
+// module.exports = withCSS(withTypescript(
+//   cssModules: true,
+//   webpack: (config) => {
+//      return config
+//   }))
 
 // module.exports = {
 //   webpack: config => {
