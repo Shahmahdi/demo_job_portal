@@ -2,101 +2,59 @@ import React from 'react'
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import 'tachyons/css/tachyons.min.css';
-import Link from 'next/link'
 import { Head } from '../components/head';
 import { Nav } from '../components/nav';
-import { Button } from '@blueprintjs/core';
+import { TextField } from '../components/common/TextField';
+import { Button, Intent } from '@blueprintjs/core';
+import { PasswordField } from '../components/common/PasswordField';
 
 const Home = () => (
   <div>
     <Head title="Home" />
     <Nav />
-    <h1 className="f4 lh-copy">Title</h1>
 
-    <Button icon="refresh" />
-    <ul className="bp3-breadcrumbs">
-      <li><a className="bp3-breadcrumbs-collapsed" href="#"></a></li>
-      <li><a className="bp3-breadcrumb bp3-disabled">Folder one</a></li>
-      <li><a className="bp3-breadcrumb" href="#">Folder two</a></li>
-      <li><a className="bp3-breadcrumb" href="#">Folder three</a></li>
-      <li><span className="bp3-breadcrumb bp3-breadcrumb-current">File</span></li>
-    </ul>
-    <div className="hero">
-      <h1 className="title">Welcome to Next!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <Link href="https://github.com/zeit/next.js#getting-started">
-          <a className="card">
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next on Github and in their examples</p>
-          </a>
-        </Link>
-        <Link href="https://open.segment.com/create-next-app">
-          <a className="card">
-            <h3>Examples &rarr;</h3>
-            <p>
-              Find other example boilerplates on the{' '}
-              <code>create-next-app</code> site
-            </p>
-          </a>
-        </Link>
-        <Link href="https://github.com/segmentio/create-next-app">
-          <a className="card">
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it</p>
-          </a>
-        </Link>
+    <div className="mw9 center ph3-ns">
+      <div className="cf ph2-ns center measure">
+        <div className="fl w-100-ns pa2">
+          <form className="pt-control-group pt-vertical pt-fill">
+            <legend className="f4 fw6 ph0 mh0">Sign In</legend>
+            {/* {props.error ?
+        <div className="f6 db mv1 pt-intent-danger pt-tag">
+          {props.error}
+        </div> : undefined} */}
+            <TextField
+              id="username"
+              leftIcon="person"
+              // error={props.error}
+              // value={props.userName}
+              placeholder="Enter Username"
+              large={true}
+            // onChange={props.setUserName}
+            />
+            <PasswordField
+              id="password"
+              placeholder="Enter Password or Activation code"
+              // error={props.error}
+              // value={props.password}
+              large={true}
+            // onPasswordChange={props.setPassword}
+            />
+            <Button
+              className="pt-large"
+              icon="log-in"
+              text="Login"
+              // intent={props.error ? Intent.DANGER : Intent.PRIMARY}
+              intent={Intent.PRIMARY}
+              type="submit"
+            // onClick={props.login}
+            />
+          </form>
+        </div>
       </div>
     </div>
 
     <style jsx={true}>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
+      
     `}</style>
   </div>
 )
