@@ -10,7 +10,7 @@ export const Nav = () => (
     <Link href="/signUp">
       <a><button className="bp3-button bp3-minimal bp3-icon-home">Sign up</button></a>
     </Link>
-    <Link href="/signUp">
+    <Link href="/">
       <a><button className="bp3-button bp3-minimal bp3-icon-home">Sign in</button></a>
     </Link>
       {/* <button className="bp3-button bp3-minimal bp3-icon-home">Sign up</button> */}

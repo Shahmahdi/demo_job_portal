@@ -6,6 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "next": "^6.1.2"
+  },
+  "devDependencies": {
+    "@blueprintjs/core": "^3.6.0",
+    "tachyons": "^4.10.0",
     "@blueprintjs/select": "^3.2.0",
     "@types/next": "^6.1.4",
     "@types/react": "^16.4.14",
@@ -13,16 +18,16 @@
     "@types/styled-jsx": "^2.2.5",
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-typescript": "^1.1.0",
-    "next": "^6.1.2",
+    "mobx": "^5.1.2",
+    "mobx-react": "^5.2.8",
+    "mobx-state-tree": "^3.3.0",
     "next-compose-plugins": "^2.1.1",
     "next-fonts": "^0.10.0",
     "next-images": "^1.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
-    "recompose": "^0.30.0"
-  },
-  "devDependencies": {
-    "@blueprintjs/core": "^3.6.0",
-    "tachyons": "^4.10.0"
+    "recompose": "^0.30.0",
+    "semantic-ui-css": "^2.4.0",
+    "semantic-ui-react": "^0.82.5"
   }
 }

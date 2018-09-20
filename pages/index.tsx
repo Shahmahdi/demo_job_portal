@@ -1,7 +1,4 @@
 import React from 'react'
-import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import 'tachyons/css/tachyons.min.css';
 import { Head } from '../components/head';
 import { Nav } from '../components/nav';
 import { TextField } from '../components/common/TextField';
