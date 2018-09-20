@@ -6,11 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/recompose": "^0.26.5",
     "next": "^6.1.2"
   },
   "devDependencies": {
     "@blueprintjs/core": "^3.6.0",
-    "tachyons": "^4.10.0",
     "@blueprintjs/select": "^3.2.0",
     "@types/next": "^6.1.4",
     "@types/react": "^16.4.14",
@@ -28,6 +28,7 @@
     "react-dom": "^16.5.0",
     "recompose": "^0.30.0",
     "semantic-ui-css": "^2.4.0",
-    "semantic-ui-react": "^0.82.5"
+    "semantic-ui-react": "^0.82.5",
+    "tachyons": "^4.10.0"
   }
 }

@@ -31,4 +31,5 @@ export const User = types
 export const UserStore = types
     .model("UserStore", {
         users: types.optional(types.array(User), []),
+        guest: types.optional(User, {})
     });

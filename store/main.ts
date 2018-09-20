@@ -6,4 +6,4 @@ const Store = types.model("Store", {
 });
 
 
-export default Store.create();
+export default Store;

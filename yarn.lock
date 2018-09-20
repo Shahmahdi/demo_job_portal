@@ -689,6 +689,12 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/recompose@^0.26.5":
+  version "0.26.5"
+  resolved "https://registry.yarnpkg.com/@types/recompose/-/recompose-0.26.5.tgz#8496b63c535a60c3584b8b0aca54bfb86679ed70"
+  dependencies:
+    "@types/react" "*"
+
 "@types/styled-jsx@^2.2.5":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@types/styled-jsx/-/styled-jsx-2.2.5.tgz#49a332f9c68d916660466b1f7ed1710ac63a3e1f"

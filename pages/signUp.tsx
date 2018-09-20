@@ -4,6 +4,10 @@ import { Head } from '../components/head';
 // import { TextFieldWithLabel } from '../components/common/TextField';
 import { Form } from 'semantic-ui-react'
 import { Dropdown } from 'semantic-ui-react'
+import Store from 'store/main';
+import { compose, mapProps } from 'recompose';
+import { inject, observer } from 'mobx-react';
+import { User } from 'store/User';
 
 const optionsDropdown = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -31,7 +35,12 @@ const options = [
   { key: 'f', text: 'Female', value: 'female' },
 ]
 
-export const SignUp = () => (
+interface SignUpProps {
+  store: typeof Store.Type;
+  guestUser: typeof User.Type;
+}
+
+export const SignUp = observer((props: SignUpProps) => (
   <div>
     <Head title="Home" />
     <Nav />
@@ -40,7 +49,7 @@ export const SignUp = () => (
       <p className="tc f3">Sign up</p>
       <Form>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Name' placeholder='Name' />
+          <Form.Input fluid label='Name' placeholder='Name' value={props.guestUser.name} />
           <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
         </Form.Group>
         <Dropdown placeholder='Skills' fluid multiple selection options={optionsDropdown} />
@@ -57,6 +66,15 @@ export const SignUp = () => (
       </div>
     </div>
   </div>
+));
+
+const enhance = compose<SignUpProps, {}>(
+  inject('store'),
+  observer,
+  mapProps<SignUpProps, SignUpProps>(props => ({
+    ...props,
+    gurstUser: props.store.userStore.guest
+  }))
 );
 
-export default SignUp;
+export default enhance(SignUp);
