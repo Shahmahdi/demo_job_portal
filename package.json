@@ -18,6 +18,7 @@
     "@types/styled-jsx": "^2.2.5",
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-typescript": "^1.1.0",
+    "axios": "^0.18.0",
     "mobx": "^5.1.2",
     "mobx-react": "^5.2.8",
     "mobx-state-tree": "^3.3.0",

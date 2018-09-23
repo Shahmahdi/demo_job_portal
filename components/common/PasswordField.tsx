@@ -4,7 +4,7 @@ import { compose, withState, withHandlers } from 'recompose';
 
 interface PasswordFieldProps {
   id: string;
-  onPasswordChange: (value: string) => void;
+  onPasswordChange?: (value: string) => void;
   error?: string;
   value?: string;
   placeholder?: string;

@@ -47,19 +47,62 @@ export const SignUp = observer((props: SignUpProps) => (
     <div>
       <div className="center fl measure w-100">
       <p className="tc f3">Sign up</p>
-      <Form>
+      <Form onSubmit={props.guestUser.save}>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Name' placeholder='Name' value={props.guestUser.name} />
-          <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
+          <Form.Input 
+            fluid 
+            label='Name' 
+            placeholder='Name' 
+            value={props.guestUser.name} 
+            onChange={e => props.guestUser.setName((e as any).target.value)}
+          />
+          <Form.Select 
+            fluid 
+            label='Gender' 
+            options={options} 
+            placeholder='Gender' 
+            value={props.guestUser.gender} 
+            onChange={(e, { value }) => props.guestUser.setGender(value.toString())}
+          />
         </Form.Group>
-        <Dropdown placeholder='Skills' fluid multiple selection options={optionsDropdown} />
+        <Dropdown 
+          placeholder='Skills' 
+          fluid 
+          multiple 
+          selection 
+          options={optionsDropdown} 
+          value={props.guestUser.skills}
+          onChange={(e, { value }) => props.guestUser.setSkills(value)}
+        />
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Email' placeholder='Email' />
-          <Form.Input fluid label='Mobile No.' placeholder='mobile' />
+          <Form.Input 
+            fluid 
+            label='Email' 
+            placeholder='Email' 
+            value={props.guestUser.email} 
+            onChange={e => props.guestUser.setEmail((e as any).target.value)}
+          />
+          <Form.Input 
+            fluid 
+            label='Mobile No.' 
+            placeholder='mobile' 
+            value={props.guestUser.mobile} 
+            onChange={e => props.guestUser.setMobile((e as any).target.value)}
+          />
         </Form.Group>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Password' placeholder='password' />
-          <Form.Input fluid label='Retype password' placeholder='Retype Password' />
+          <Form.Input 
+            fluid 
+            label='Password' 
+            placeholder='password' 
+            value={props.guestUser.password} 
+            onChange={e => props.guestUser.setPassword((e as any).target.value)}
+          />
+          <Form.Input 
+            fluid 
+            label='Retype password' 
+            placeholder='Retype Password' 
+          />
         </Form.Group>
         <Form.Button>Submit</Form.Button>
       </Form>
@@ -73,7 +116,7 @@ const enhance = compose<SignUpProps, {}>(
   observer,
   mapProps<SignUpProps, SignUpProps>(props => ({
     ...props,
-    gurstUser: props.store.userStore.guest
+    guestUser: props.store.userStore.getGuestUser()
   }))
 );
 
